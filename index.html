@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+      integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="app.css" />
+    <title>Document</title>
+  </head>
+  <body class="bg-blue-200 flex justify-center items-center h-screen">
+    <div class="bg-blue-50 p-10 rounded-xl">
+      <h2 class="text-center font-extrabold text-4xl">Currency Converter</h2>
+      <form class="mt-4 mb-2">
+        <p>Enter amount</p>
+        <input class="w-full outline-0 rounded-md h-10 p-2 mt-2" value="1" type="text" />
+        <div class="flex justify-between items-center mt-4 drop-down">
+          <div>
+            <p>From</p>
+            <div class="flex justify-center items-center w-32 border border-black p-2 rounded-md">
+                <img class="w-10" src="https://flagsapi.com/US/flat/64.png" />
+              <select class="w-full outline-0 rounded-md h-8 from" name="from"></select>
+            </div>
+          </div>
+          <i class="fa-solid fa-right-left mt-5 text-3xl"></i>
+          <div>
+            <p>To</p>
+            <div class="flex justify-center items-center w-32 border border-black p-2 rounded-md">
+              <img class="w-10" src="https://flagsapi.com/IN/flat/64.png" />
+              <select class="w-full outline-0 rounded-md h-8 to" name="to"></select>
+            </div>
+          </div>
+        </div>
+        <div class="mt-6 mb-4 msg">1USD = 80INR</div>
+        <button class="w-full outline-0 rounded-md h-10 bg-blue-500 text-white font-bold hover:bg-blue-600">Get Exchange rate</button>
+      </form>
+    </div>
+    <script src="codes.js"></script>
+    <script src="app.js"></script>
+  </body>
+</html>
