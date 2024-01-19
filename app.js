@@ -5,7 +5,7 @@ let btn = document.querySelector('button');
 let fromCurr = document.querySelector('.from');
 let toCurr = document.querySelector('.to');
 let msg = document.querySelector('.msg');
-console.log(dropDowns);
+let container = document.querySelector('.justify-between');
 
 // from and to selects are iterated and then new option is added to select element
 for(let select of dropDowns) {
@@ -55,6 +55,22 @@ const updateExchangeRate = async() => {
     // update the text of the message
     msg.innerText = `${amtVal}${fromCurr.value} = ${totalAmount}${toCurr.value}`;
 }
+
+// function to update the exchange rate according to change in country
+const updateRateInMsg = async() => {
+    const URL = `${BASE_URL}/${fromCurr.value.toLowerCase()}/${toCurr.value.toLowerCase()}.json`;
+    let response = await fetch(URL);
+    let data = await response.json();
+    // get the exchange rate from the response body
+    let rate = data[toCurr.value.toLowerCase()];
+    // update the text of the message
+    msg.innerText = `${1}${fromCurr.value} = ${rate}${toCurr.value}`;
+};
+
+// event listener to update the exchange rate according to change in country
+container.addEventListener("change", () => {
+    updateRateInMsg();
+});
 
 // event listener on button to display the result
 btn.addEventListener("click", (evt) => {
